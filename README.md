@@ -297,6 +297,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![GitHub stars](https://img.shields.io/github/stars/WizelineBMicke/testcafe-automation?style=social)](https://github.com/WizelineBMicke/testcafe-automation)
 [![GitHub forks](https://img.shields.io/github/forks/WizelineBMicke/testcafe-automation?style=social)](https://github.com/WizelineBMicke/testcafe-automation)
 
-**Made with ❤️ by the TestCafe Community**
+**Made with ❤️ by Mike**
 
 </div>
