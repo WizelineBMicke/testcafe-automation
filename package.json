@@ -1,0 +1,21 @@
+{
+  "name": "testcafepractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testLogin": "testcafe chrome tests/login.test.js --reporter html:reports/report.html --screenshots reports/screenshots --screenshots-on-fails",
+    "testHome": "testcafe chrome tests/home.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "dotenv": "^17.2.2",
+    "testcafe": "^3.7.2"
+  },
+  "dependencies": {
+    "testcafe-reporter-html": "^1.4.6"
+  }
+}
