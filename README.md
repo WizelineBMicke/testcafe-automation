@@ -1,133 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>🧪 TestCafe Automation Framework</title>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9fb;
-      color: #333;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: linear-gradient(90deg, #00b4d8, #0077b6);
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    section {
-      padding: 30px 60px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      color: #0077b6;
-      margin-top: 40px;
-    }
-    pre {
-      margin: 15px 0;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    code {
-      font-size: 0.9rem;
-    }
-    ul {
-      list-style-type: "✅ ";
-      margin-left: 20px;
-    }
-    .tree {
-      background: #f1f5f9;
-      padding: 15px;
-      border-radius: 6px;
-      font-family: monospace;
-      font-size: 0.95rem;
-      color: #1e293b;
-    }
-    .highlight {
-      background: #e0f7fa;
-      padding: 5px 10px;
-      border-radius: 4px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #0077b6;
-      color: white;
-    }
-  </style>
-</head>
-<body>
+<div align="center">
 
-<header>
-  <h1>🧪 TestCafe Automation Framework</h1>
-  <p>A basic TestCafe framework using Page Object Model (POM)</p>
-</header>
+# 🧪 TestCafe Automation Framework
 
-<section>
-  <h2>📂 Project Structure</h2>
-  <div class="tree">
-    testcafe-automation/<br>
-    ├── data/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Test data files (JSON, CSV, etc.)<br>
-    │   └── loginData.json<br>
-    ├── pages/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Page Objects (POM)<br>
-    │   ├── basePage.js<br>
-    │   ├── homePage.js<br>
-    │   └── loginPage.js<br>
-    ├── tests/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Test files<br>
-    │   └── login.test.js<br>
-    ├── utils/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Utilities (helpers, reporting, etc.)<br>
-    │   └── testUtils.js<br>
-    ├── .env &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Environment variables<br>
-    ├── .gitignore<br>
-    ├── package.json<br>
-    └── README.md
-  </div>
+[![TestCafe](https://img.shields.io/badge/TestCafe-2.6.0-blue.svg)](https://devexpress.github.io/testcafe/)
+[![Node.js](https://img.shields.io/badge/Node.js-16%2B-green.svg)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-  <h2>⚙️ Installation</h2>
-  <ol>
-    <li>Clone the repository:</li>
-    <pre><code class="bash">git clone https://github.com/WizelineBMicke/testcafe-automation.git
-cd testcafe-automation</code></pre>
+*A modern, scalable TestCafe automation framework using the Page Object Model (POM) pattern*
 
-    <li>Install dependencies:</li>
-    <pre><code class="bash">npm install</code></pre>
+[🚀 Quick Start](#-quick-start) • [📁 Project Structure](#-project-structure) • [⚙️ Configuration](#️-configuration) • [📝 Examples](#-examples) • [📊 Reports](#-reports)
 
-    <li>Install TestCafe (if not installed globally):</li>
-    <pre><code class="bash">npm install -D testcafe dotenv</code></pre>
-  </ol>
+</div>
 
-  <h2>🌍 Environment Configuration</h2>
-  <p>We use a <span class="highlight">.env</span> file to manage environment variables.</p>
-  <pre><code class="env">PAGE_URL=https://practicesoftwaretesting.com/
-BROWSER=chrome</code></pre>
-  <p>You can add more variables like <code>USERNAME</code> and <code>PASSWORD</code> if needed.</p>
+---
 
-  <h2>📝 Writing Tests with POM</h2>
-  <p>
-    - Page Objects are stored in <span class="highlight">/pages/</span> folder.<br>
-    - Test data is stored in <span class="highlight">/data/</span> folder.<br>
-    - Tests are in <span class="highlight">/tests/</span> folder.<br>
-  </p>
-  <p>Example test (<code>tests/login.test.js</code>):</p>
-  <pre><code class="javascript">import { Selector, t } from 'testcafe';
+## 🌟 Features
+
+<div align="center">
+
+| ✨ Feature | 📝 Description |
+|------------|----------------|
+| 🏗️ **Page Object Model** | Clean, maintainable test architecture |
+| 🔧 **Environment Config** | Easy configuration across different environments |
+| 📊 **Rich Reporting** | HTML reports with screenshots and detailed logs |
+| 🎯 **Data-Driven Testing** | JSON-based test data management |
+| 🚀 **Cross-Browser Support** | Chrome, Firefox, Safari, Edge compatibility |
+| 📱 **Responsive Testing** | Mobile and desktop viewport testing |
+| 🔍 **Smart Selectors** | Robust element selection strategies |
+
+</div>
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Node.js** 16+ 
+- **npm** 8+
+- **Git**
+
+### Installation
+
+<details>
+<summary><b>📋 Step-by-step setup</b></summary>
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/WizelineBMicke/testcafe-automation.git
+   cd testcafe-automation
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Install TestCafe globally** (optional)
+   ```bash
+   npm install -g testcafe
+   ```
+
+4. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+
+</details>
+
+---
+
+## 📁 Project Structure
+
+```
+testcafepractice/
+├── 📂 data/                    # Test data files
+│   ├── 📄 homeData.json        # Home page test data
+│   └── 📄 loginData.json       # Login test data
+├── 📂 pages/                   # Page Object Models
+│   ├── 📄 home.page.js         # Home page object
+│   └── 📄 login.page.js        # Login page object
+├── 📂 tests/                   # Test suites
+│   ├── 📄 home.test.js         # Home page tests
+│   └── 📄 login.test.js        # Login tests
+├── 📂 utils/                   # Utility functions
+├── 📂 reports/                 # Test reports & screenshots
+├── 📄 package.json             # Dependencies & scripts
+└── 📄 README.md               # This file
+```
+
+<details>
+<summary><b>🔍 Detailed structure breakdown</b></summary>
+
+| Directory | Purpose | Key Files |
+|-----------|---------|-----------|
+| `data/` | Test data storage | JSON files with test inputs |
+| `pages/` | Page Object Models | Reusable page interactions |
+| `tests/` | Test suites | Individual test files |
+| `utils/` | Helper functions | Common utilities & helpers |
+| `reports/` | Output directory | HTML reports & screenshots |
+
+</details>
+
+---
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+# Application URLs
+PAGE_URL=https://practicesoftwaretesting.com/
+BASE_URL=https://practicesoftwaretesting.com/
+
+# Browser Configuration
+BROWSER=chrome
+HEADLESS=false
+
+# Test Configuration
+TIMEOUT=30000
+SCREENSHOT_PATH=reports/screenshots
+
+# User Credentials
+USERNAME=your-username
+PASSWORD=your-password
+```
+
+### Browser Options
+
+| Browser | Command | Notes |
+|---------|---------|-------|
+| Chrome | `chrome` | Default, fastest |
+| Firefox | `firefox` | Good for debugging |
+| Safari | `safari` | macOS only |
+| Edge | `edge` | Windows/Linux |
+
+---
+
+## 📝 Examples
+
+### Basic Test Structure
+
+```javascript
+import { Selector, t } from 'testcafe';
 import dotenv from 'dotenv';
-import LoginPage from '../pages/loginPage';
-import HomePage from '../pages/homePage';
+import LoginPage from '../pages/login.page.js';
+import HomePage from '../pages/home.page.js';
 import loginData from '../data/loginData.json';
 
 dotenv.config();
@@ -135,28 +157,146 @@ dotenv.config();
 fixture`Login Tests`
     .page(process.env.PAGE_URL);
 
-test('Valid Login', async t =&gt; {
+test('Valid Login Flow', async t => {
     const loginPage = new LoginPage();
     const homePage = new HomePage();
 
-    await loginPage.login(loginData.validUser.email, loginData.validUser.password);
+    // Perform login
+    await loginPage.login(
+        loginData.validUser.email, 
+        loginData.validUser.password
+    );
+    
+    // Verify success
     await homePage.verifyUserLoggedIn();
-});</code></pre>
+});
+```
 
-  <h2>📊 Reports & Screenshots</h2>
-  <p>You can generate reports with:</p>
-  <pre><code class="bash">npx testcafe chrome tests/login.test.js --reporter html:reports/report.html --screenshots reports/screenshots --screenshots-on-fails</code></pre>
+### Page Object Example
 
-  <h2>🚀 Running Tests</h2>
-  <pre><code class="bash">npm run testLogin</code></pre>
-</section>
+```javascript
+// pages/login.page.js
+import { Selector, t } from 'testcafe';
 
-<footer>
-  <p>🚀 Built with TestCafe | Following POM Best Practices</p>
-</footer>
+class LoginPage {
+    constructor() {
+        this.emailInput = Selector('#email');
+        this.passwordInput = Selector('#password');
+        this.loginButton = Selector('button[data-test="login-submit"]');
+        this.errorMessage = Selector('.alert-danger');
+    }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+    async login(email, password) {
+        await t
+            .typeText(this.emailInput, email)
+            .typeText(this.passwordInput, password)
+            .click(this.loginButton);
+    }
 
-</body>
-</html>
+    async verifyErrorMessage() {
+        await t.expect(this.errorMessage.exists).ok();
+    }
+}
+
+export default LoginPage;
+```
+
+---
+
+## 📊 Reports & Screenshots
+
+### Generate HTML Reports
+
+```bash
+# Basic report
+npx testcafe chrome tests/ --reporter html:reports/report.html
+
+# With screenshots
+npx testcafe chrome tests/ \
+  --reporter html:reports/report.html \
+  --screenshots reports/screenshots \
+  --screenshots-on-fails
+```
+
+### Report Features
+
+<div align="center">
+
+| 📊 Feature | ✨ Description |
+|------------|----------------|
+| 📈 **Test Results** | Pass/fail statistics with timing |
+| 🖼️ **Screenshots** | Visual evidence of test execution |
+| 📝 **Detailed Logs** | Step-by-step execution details |
+| 🎨 **Modern UI** | Clean, responsive report interface |
+| 📱 **Mobile Friendly** | View reports on any device |
+
+</div>
+
+---
+
+## 🚀 Running Tests
+
+### Available Scripts
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test file
+npm run test:login
+npm run test:home
+
+# Run with different browsers
+npm run test:chrome
+npm run test:firefox
+
+# Run in headless mode
+npm run test:headless
+
+# Generate reports
+npm run test:report
+```
+
+### Command Line Options
+
+| Option | Description | Example |
+|--------|-------------|---------|
+| `--reporter` | Report format | `--reporter html` |
+| `--screenshots` | Screenshot directory | `--screenshots reports/` |
+| `--concurrency` | Parallel execution | `--concurrency 3` |
+| `--selector-timeout` | Element wait time | `--selector-timeout 10000` |
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### Development Setup
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Run tests: `npm test`
+5. Commit changes: `git commit -m 'Add amazing feature'`
+6. Push to branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### 🌟 Star this repository if you found it helpful!
+
+[![GitHub stars](https://img.shields.io/github/stars/WizelineBMicke/testcafe-automation?style=social)](https://github.com/WizelineBMicke/testcafe-automation)
+[![GitHub forks](https://img.shields.io/github/forks/WizelineBMicke/testcafe-automation?style=social)](https://github.com/WizelineBMicke/testcafe-automation)
+
+**Made with ❤️ by the TestCafe Community**
+
+</div>
